@@ -25,15 +25,26 @@ def zero_matrix(matrix):
     # get the size of matrix
     num_rows = len(matrix)
     num_cols = len(matrix[0])
-    print(num_rows)
-    print(num_cols)
+    has_zero = False
 
+    # if number is 0, store it
     for x in range(num_rows):
         for y in range(num_cols):
             if matrix[x][y] == 0:
-                print(matrix[x][y])
-                zero_row = [x]
-                zero_col = [y]
+                zero_row = x
+                zero_col = y
+                has_zero = True
+    
+    if has_zero is False :
+        return matrix
+    
+    #change it to 0 if it is in the row or column
+    for x in range(num_rows):
+        for y in range(num_cols):
+            if x == zero_row or y == zero_col:
+                matrix[x][y] = 0
+    
+    return matrix
 
 
 
