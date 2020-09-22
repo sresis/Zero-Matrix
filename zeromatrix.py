@@ -19,6 +19,23 @@ Make sure it works with non-square matrices:
 
 def zero_matrix(matrix):
     """Given an NxM matrix, for cells=0, set their row and column to zeroes."""
+    # go through each item in each list 
+    # identify the zero
+    # store the location of the zero (in a tuple)
+    # get the size of matrix
+    num_rows = len(matrix)
+    num_cols = len(matrix[0])
+    print(num_rows)
+    print(num_cols)
+
+    for x in range(num_rows):
+        for y in range(num_cols):
+            if matrix[x][y] == 0:
+                print(matrix[x][y])
+                zero_row = [x]
+                zero_col = [y]
+
+
 
 
 if __name__ == "__main__":
